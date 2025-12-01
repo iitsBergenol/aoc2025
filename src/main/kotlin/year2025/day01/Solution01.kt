@@ -42,7 +42,6 @@ class Solution01 {
             if(output) {
                 print("The dial is rotated $it to point at $currentPosition")
                 if(zeroesWhileRotating != 0) {
-
                     print(" during this rotation, it points at 0 $zeroesWhileRotating times.")
                 }
             }
@@ -52,20 +51,25 @@ class Solution01 {
                 if(rotation >= 0) {
                     if (oldPosition > currentPosition) {
                         zeroes++
-                        print(" during this rotation, it points at 0 once going forwards.")
+                        if(output) {
+                            print(" during this rotation, it points at 0 once going forwards.")
+                        }
                     }
                 } else {
                     if (oldPosition < currentPosition) {
                         zeroes++
-                        print(" during this rotation, it points at 0 once going backwards.")
+                        if(output) {
+                            print(" during this rotation, it points at 0 once going backwards.")
+                        }
                     }
                 }
             }
 
 
             zeroes += zeroesWhileRotating
-
-            println()
+            if(output) {
+                println()
+            }
 
             if (currentPosition == 0) { zeroes++ }
 
